@@ -1,0 +1,33 @@
+# funciona: 
+E:\qemu\qemu-system-x86_64.exe -boot d -cdrom "E:\isos\Porteus-XFCE-v5.1-alpha2-x86_64.iso" -m 2048
+
+wget https://github.com/xmrig/xmrig/releases/download/v6.21.3/xmrig-6.21.3-linux-static-x64.tar.gz
+
+tar -xvf xmrig-6.21.3-linux-static-x64.tar.gz
+
+cd xmrig-6.21.3
+
+chmod +x xmrig
+
+sudo sysctl -w vm.nr_hugepages=1280
+
+./xmrig -o gulf.moneroocean.stream:10128 -u 41fEwVw9vLticzq7Lo83n75qrKZ4ecpekPcuWy6RCgfA78boEDD9G1iEXqCsWeixqhXGa6jTWduVzUipbKWajy5M9houfkV -p x -k --tls --rig-id porteus-minero --donate-level=0 --cpu-max-threads-hint=100
+
+
+#Ejemplo más completo:
+Opciones adicionales (opcionales):
+-enable-kvm: Si tienes soporte de virtualización (en Linux o WSL2).
+-smp 2: Asigna 2 núcleos de CPU.
+-vga virtio: Mejor rendimiento gráfico.
+
+E:\qemu\qemu-system-x86_64.exe -boot d -cdrom "E:\isos\Porteus-XFCE-v5.1-alpha2-x86_64.iso" -m 2048 -smp 2 -vga virtio
+
+
+
+
+
+
+
+
+verificar que funcione en la página oficial: https://moneroocean.stream/
+41fEwVw9vLticzq7Lo83n75qrKZ4ecpekPcuWy6RCgfA78boEDD9G1iEXqCsWeixqhXGa6jTWduVzUipbKWajy5M9houfkV
