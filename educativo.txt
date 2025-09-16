@@ -1,5 +1,15 @@
+
 # funciona: 
 E:\qemu\qemu-system-x86_64.exe -boot d -cdrom "E:\isos\Porteus-XFCE-v5.1-alpha2-x86_64.iso" -m 2048
+
+#instalar git
+slapt-get --update
+slapt-get --install git 
+
+#darle permisos de ejecucion
+chmod +x prueba2
+
+
 
 wget https://github.com/xmrig/xmrig/releases/download/v6.21.3/xmrig-6.21.3-linux-static-x64.tar.gz
 
