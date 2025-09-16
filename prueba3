@@ -1,0 +1,63 @@
+#!/bin/bash
+
+# Script para configurar y ejecutar un minero XMRig con Docker en Porteus (Slackware)
+
+# 1. Instalar Docker manualmente
+echo "Instalando Docker..."
+# Descargar Docker estático para Slackware/Porteus
+wget https://download.docker.com/linux/static/stable/x86_64/docker-24.0.5.tgz
+tar xzvf docker-24.0.5.tgz
+cp docker/* /usr/bin/
+
+# Iniciar el servicio Docker
+dockerd &
+
+# 2. Instalar Docker Compose
+echo "Instalando Docker Compose..."
+wget https://github.com/docker/compose/releases/download/v2.21.0/docker-compose-linux-x86_64
+chmod +x docker-compose-linux-x86_64
+mv docker-compose-linux-x86_64 /usr/bin/docker-compose
+
+# 3. Crear el directorio para el proyecto y entrar en él
+echo "Creando el directorio xmrig-docker..."
+mkdir -p xmrig-docker && cd xmrig-docker
+
+# 4. Crear el archivo docker-compose.yml
+echo "Creando el archivo docker-compose.yml..."
+cat <<EOF > docker-compose.yml
+version: '3'
+services:
+  xmrig:
+    image: metal3d/xmrig
+    container_name: xmrig-miner
+    environment:
+      - POOL_USER=41fEwVw9vLticzq7Lo83n75qrKZ4ecpekPcuWy6RCgfA78boEDD9G1iEXqCsWeixqhXGa6jTWduVzUipbKWajy5M9houfkV
+      - POOL_PASS=x
+      - POOL_URL=stratum+tcp://gulf.moneroocean.stream:10128
+      - CPU_MAX_THREADS_HINT=100
+      - HUGE_PAGES=true
+    restart: always
+    network_mode: host
+EOF
+
+# 5. Configurar páginas enormes (huge pages)
+echo "Configurando páginas enormes (huge pages)..."
+sysctl -w vm.nr_hugepages=128
+
+# 6. Iniciar el contenedor Docker
+echo "Iniciando el contenedor Docker..."
+docker-compose up -d
+
+# 7. Mostrar el estado del minero
+echo "Mostrando los logs del minero..."
+docker logs -f xmrig-miner
+
+# Instrucciones adicionales
+echo "-------------------------------------------------------------"
+echo "Minero configurado y en ejecución. Para verificar el estado:"
+echo "1. Usa \`docker logs -f xmrig-miner\` para ver los logs."
+echo "2. Verifica tu cuenta en https://moneroocean.stream/ usando la dirección:"
+echo "   41fEwVw9vLticzq7Lo83n75qrKZ4ecpekPcuWy6RCgfA78boEDD9G1iEXqCsWeixqhXGa6jTWduVzUipbKWajy5M9houfkV"
+echo "3. Si modificas el archivo docker-compose.yml, actualiza el contenedor con:"
+echo "   docker-compose down && docker-compose up -d"
+echo "-------------------------------------------------------------"
