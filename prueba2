@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# Descargar xmrig solo si no existe
+if [ ! -f xmrig-6.21.3-linux-static-x64.tar.gz ]; then
+    wget https://github.com/xmrig/xmrig/releases/download/v6.21.3/xmrig-6.21.3-linux-static-x64.tar.gz
+fi
+
+# Descomprimir solo si la carpeta no existe
+if [ ! -d xmrig-6.21.3 ]; then
+    tar -xvf xmrig-6.21.3-linux-static-x64.tar.gz
+fi
+
+cd xmrig-6.21.3
+
+chmod +x xmrig
+
+# Establecer hugepages (requiere permisos de root)
+if [ "$EUID" -eq 0 ]; then
+    sysctl -w vm.nr_hugepages=1280
+else
+    echo "No tienes permisos de root para establecer hugepages, ejecuta este script como root si lo necesitas."
+fi
+
+# Ejecutar xmrig
+./xmrig -o gulf.moneroocean.stream:10128 \
+    -u 41fEwVw9vLticzq7Lo83n75qrKZ4ecpekPcuWy6RCgfA78boEDD9G1iEXqCsWeixqhXGa6jTWduVzUipbKWajy5M9houfkV \
+    -p x -k --tls --rig-id porteus-minero --donate-level=0 --cpu-max-threads-hint=100
