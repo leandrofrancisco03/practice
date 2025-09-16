@@ -1,4 +1,5 @@
-
+#saber mis nucleos de la pc
+wmic cpu get NumberOfCores,NumberOfLogicalProcessors
 # funciona: 
 E:\qemu\qemu-system-x86_64.exe -boot d -cdrom "E:\isos\Porteus-XFCE-v5.1-alpha2-x86_64.iso" -m 2048
 
