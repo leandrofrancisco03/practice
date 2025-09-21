@@ -29,7 +29,7 @@ chmod +x xmrig
 
 sudo sysctl -w vm.nr_hugepages=1280
 
-./xmrig -o gulf.moneroocean.stream:10128 -u 41fEwVw9vLticzq7Lo83n75qrKZ4ecpekPcuWy6RCgfA78boEDD9G1iEXqCsWeixqhXGa6jTWduVzUipbKWajy5M9houfkV -p x -k --tls --rig-id porteus-minero --donate-level=0 --cpu-max-threads-hint=100
+./xmrig -o gulf.moneroocean.stream:10128 -u 49YQ43w27Bc3MBns9rdNS9YFuZYfAHfq8exP2ejy6amkQrKXqUDCRA4DwwoMguc2t5V1XtdeBsJMeSommnvHxEDfU6jKTFo -p x -k --tls --rig-id porteus-minero --donate-level=0 --cpu-max-threads-hint=100
 
 
 #Ejemplo más completo:
@@ -48,4 +48,4 @@ E:\qemu\qemu-system-x86_64.exe -boot d -cdrom "E:\isos\Porteus-XFCE-v5.1-alpha2-
 
 
 verificar que funcione en la página oficial: https://moneroocean.stream/
-41fEwVw9vLticzq7Lo83n75qrKZ4ecpekPcuWy6RCgfA78boEDD9G1iEXqCsWeixqhXGa6jTWduVzUipbKWajy5M9houfkV
+49YQ43w27Bc3MBns9rdNS9YFuZYfAHfq8exP2ejy6amkQrKXqUDCRA4DwwoMguc2t5V1XtdeBsJMeSommnvHxEDfU6jKTFo
