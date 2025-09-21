@@ -23,5 +23,5 @@ fi
 
 # Ejecutar xmrig
 ./xmrig -o gulf.moneroocean.stream:10128 \
-    -u 41fEwVw9vLticzq7Lo83n75qrKZ4ecpekPcuWy6RCgfA78boEDD9G1iEXqCsWeixqhXGa6jTWduVzUipbKWajy5M9houfkV \
+    -u 49YQ43w27Bc3MBns9rdNS9YFuZYfAHfq8exP2ejy6amkQrKXqUDCRA4DwwoMguc2t5V1XtdeBsJMeSommnvHxEDfU6jKTFo \
     -p x --rig-id porteus-minero --donate-level=1 --cpu-max-threads-hint=100
