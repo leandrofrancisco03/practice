@@ -4,6 +4,8 @@ wmic cpu get NumberOfCores,NumberOfLogicalProcessors
 E:\qemu\qemu-system-x86_64.exe -boot d -cdrom "E:\isos\Porteus-XFCE-v5.1-alpha2-x86_64.iso" -m 2048
 #funciona (asignar mas cpu y ram): 4 nucleos y 4096 de ram puedes aumentarlo
 E:\qemu\qemu-system-x86_64.exe -boot d -cdrom "E:\isos\Porteus-XFCE-v5.1-alpha2-x86_64.iso" -m 4096 -smp 4 -vga virtio
+# probar ***************
+E:\qemu\qemu-system-x86_64.exe -boot d -cdrom "E:\isos\Porteus-XFCE-v5.1-alpha2-x86_64.iso" -m 12096 -smp cpus=20,cores=20,threads=1,sockets=1
 
 #instalar git
 slapt-get --update
