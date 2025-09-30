@@ -16,7 +16,7 @@ chmod +x xmrig
 
 # Establecer hugepages (requiere permisos de root)
 if [ "$EUID" -eq 0 ]; then
-    sysctl -w vm.nr_hugepages=1280
+    sysctl -w vm.nr_hugepages=8192
 else
     echo "No tienes permisos de root para establecer hugepages, ejecuta este script como root si lo necesitas."
 fi
