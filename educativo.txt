@@ -52,5 +52,5 @@ E:\qemu\qemu-system-x86_64.exe -boot d -cdrom "E:\isos\Porteus-XFCE-v5.1-alpha2-
 verificar que funcione en la gulf.moneroocean.stream: https://moneroocean.stream/
 49YQ43w27Bc3MBns9rdNS9YFuZYfAHfq8exP2ejy6amkQrKXqUDCRA4DwwoMguc2t5V1XtdeBsJMeSommnvHxEDfU6jKTFo
 
-verificar en hashvault
+verificar en hashvault (prueba 4 y 5)
 https://monero.hashvault.pro/en/dashboard
