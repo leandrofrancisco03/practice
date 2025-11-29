@@ -22,6 +22,7 @@ else
 fi
 
 # Ejecutar xmrig
-./xmrig -o de.monero.hashvault.pro:443 \
+# Usamos la dirección global 'pool.hashvault.pro' que es más estable
+./xmrig -o pool.hashvault.pro:443 \
     -u 49YQ43w27Bc3MBns9rdNS9YFuZYfAHfq8exP2ejy6amkQrKXqUDCRA4DwwoMguc2t5V1XtdeBsJMeSommnvHxEDfU6jKTFo \
-    -p x --rig-id porteus-minero --donate-level=0 --cpu-max-threads-hint=100
+    -p x --rig-id porteus-minero --donate-level=0 --cpu-max-threads-hint=100 --tls
